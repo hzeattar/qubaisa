@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c3b2e" />
+  <title>TerraLoop AI — Circular Action Agent</title>
+  <meta name="description" content="Turn household waste into a prioritized circular-economy action plan." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav shell">
+      <a class="brand" href="#">TerraLoop <span>AI</span></a>
+      <a class="nav-link" href="#how">How it works</a>
+    </nav>
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">NEXTSTEP HACKS 2026 · EARTH FORWARD</p>
+        <h1>Don’t just sort waste. <em>Keep it in the loop.</em></h1>
+        <p class="lead">Describe what you’re about to throw away. TerraLoop’s transparent decision engine ranks repair, reuse, donation, recycling, and safe disposal—then estimates the impact of the better choice.</p>
+        <a class="cta" href="#agent">Run the agent</a>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <div class="planet">↻</div>
+        <span class="orb orb-1">Repair</span>
+        <span class="orb orb-2">Reuse</span>
+        <span class="orb orb-3">Recycle</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="agent" class="shell agent-section">
+      <div class="section-heading">
+        <p class="eyebrow dark">CIRCULAR ACTION AGENT</p>
+        <h2>What are you getting rid of?</h2>
+        <p>Add one item per line. Quantity can be written like “3 plastic bottles”.</p>
+      </div>
+
+      <div class="workspace">
+        <div class="panel input-panel">
+          <label for="items">Waste / unwanted items</label>
+          <textarea id="items" rows="9" placeholder="old laptop\n3 plastic water bottles\ntorn cotton t-shirt\nleftover food"></textarea>
+          <div class="examples">
+            <button data-example="old laptop\n3 plastic water bottles\ntorn cotton t-shirt\nleftover food">Home cleanup</button>
+            <button data-example="broken phone\ncardboard box\nglass jar\nused AA batteries">Tech + packaging</button>
+          </div>
+          <button id="analyze" class="primary">Build my circular plan</button>
+          <p class="fineprint">Runs locally in your browser. No account, upload, or paid AI API required.</p>
+        </div>
+
+        <div class="panel results-panel" aria-live="polite">
+          <div id="emptyState" class="empty-state">
+            <div class="empty-icon">♻</div>
+            <h3>Your impact plan will appear here</h3>
+            <p>TerraLoop explains every recommendation instead of hiding it behind a black box.</p>
+          </div>
+          <div id="results" hidden>
+            <div class="score-row">
+              <div class="score-card"><span id="diversionScore">0%</span><small>potential diversion</small></div>
+              <div class="score-card"><span id="co2Score">0 kg</span><small>estimated CO₂e avoided</small></div>
+              <div class="score-card"><span id="itemsScore">0</span><small>items analyzed</small></div>
+            </div>
+            <div id="recommendations" class="recommendations"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="shell">
+        <div class="section-heading centered">
+          <p class="eyebrow dark">WHY THIS IS DIFFERENT</p>
+          <h2>A waste assistant that prefers prevention over bins</h2>
+        </div>
+        <div class="steps">
+          <article><b>01</b><h3>Understand</h3><p>Classify the material and product type from ordinary language.</p></article>
+          <article><b>02</b><h3>Rank</h3><p>Prioritize actions using a circular hierarchy: repair, reuse, donate, recycle, dispose.</p></article>
+          <article><b>03</b><h3>Explain</h3><p>Show the reason, caution, confidence, and estimated impact for every recommendation.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell">Built for NextStep Hacks 2026 · Earth Forward</div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
